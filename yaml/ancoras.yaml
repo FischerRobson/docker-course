@@ -1,0 +1,8 @@
+---
+host: fischer
+datacenter:
+  location: &SP Sao Paulo # Declara a ancora SP com valor Sao Paulo
+---
+host: udemy
+datacenter: 
+  location: *SP # Usa a ancora SP

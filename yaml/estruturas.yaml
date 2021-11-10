@@ -1,0 +1,18 @@
+host: fischer
+datacenter:
+  location: Sao Paulo
+  router: 42
+  switch: 34
+roles:
+  - web
+  - dns
+---
+host: udemy
+datacenter:
+  location: Virgina
+  router: 42
+  switch: 34
+roles:
+  - web
+  - dns
+# --- delimita a configuracao, permitindo repetir as chaves em outras estruturas

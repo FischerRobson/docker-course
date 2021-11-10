@@ -1,0 +1,14 @@
+# Usar espaços e não TAB
+
+# par => chave: valor
+
+# - lista_1
+# - lista_2
+
+host: fischer
+datacenter:
+  location: Sao Paulo
+  router: 42
+roles:
+  - web
+  - dns

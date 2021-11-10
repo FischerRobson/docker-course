@@ -1,0 +1,5 @@
+roles:
+  - webserver
+  - database
+
+permissions: [admin, user]

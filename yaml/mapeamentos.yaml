@@ -1,0 +1,4 @@
+host: fischer # 1 mapeamento
+datacenter: # 1 mapeamento
+  location: Sao Paulo # 1 mapeamento
+  router: 42 # 1 mapeamento

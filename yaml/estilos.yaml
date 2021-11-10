@@ -1,0 +1,13 @@
+# BLOCK
+host1: fischer
+datacenter1:
+  location: Sao Paulo
+  router: 42
+roles1:
+  - web
+  - dns
+
+# FLOW
+host2: "Fischer"
+datacenter2: { location: Sao Paulo, router: 42 }
+router: [web, dns]

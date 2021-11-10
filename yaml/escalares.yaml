@@ -1,0 +1,24 @@
+host: fischer
+datacenter:
+  location: Sao Paulo
+  router: "42"
+roles:
+  - web
+  - dns
+funcionamento: |
+  segunda - das 08 as 17
+  terca - das 08 as 17
+  quarta - das 07 as 17
+  quinta - das 08 as 17
+  sexta - das 09 as 14
+comentarios: >
+  alto uso de cpu
+  desde 04/05/2022.
+    
+    Gerencia
+
+# | -> multiplos valores
+# > -> um valor
+
+# Não há necessidade de usar '' nas strings
+# Se o valor inteiro não é utilizado para operações, use-os como string com ""

@@ -1,0 +1,12 @@
+%TAG ! tag:host:geek:
+---
+host: geek
+datacenter:
+  location: !GEEK Sao Paulo
+  router: 42
+---
+host: fischer
+datacenter:
+  location: Sao Paulo
+  router: !!str 45 # TAG de string
+  switch: !!str 42
