@@ -31,8 +31,11 @@ docker image rm [IMAGEM] -f # nome:tag ou id
 docker rm [CONTAINER] -f # nome:tag ou id
 
 # MAPEAMENTO DE PORTAS
-docker run -d -p [PORTA_LOCAL]:[PORTA_CONTAINER] [IMAGEM]
+docker run -d -p [PORTA_LOCAL]:[PORTA_CONTAINER] [IMAGEM] # -d executar em background
 docker run -d -p 8080:80 nginx:1.19.4-alpine # executa o nginx e faz o espelhamento da porta 80 (container) para a 8080 (máquina)
 
 # ENTRAR NO SHELL DO CONTAINER
 docker exec -it [CONTAINER] sh
+
+# REDES
+docker network ls
