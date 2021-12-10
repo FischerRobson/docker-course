@@ -1,0 +1,11 @@
+buildar a imagem do pg fusion:
+    docker build -f pgfusion.dockerfile -t fischernz/pgfusion:v1 .
+criar um container do pgfusion:
+    docker run --name pgfusion -d fischernz/pgfusion:v1
+buildar a imagem do fusion:
+    docker build -f fusion.dockerfile -t fischernz/fusion:v1 .
+criar um container do fusion:
+    docker run --name fusion -d -p 8080:8000 fischernz/fusion:v1
+
+# a porta do postgres nao é exposta para o computador local por segurança
+
