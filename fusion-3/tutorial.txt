@@ -1,0 +1,6 @@
+executar o docker-compose (no dir do projeto):
+    docker-compose build
+apos gerar as imagens: 
+    docker-compose up -d // -d para rodar em background
+encerrar:
+    docker-compose down
