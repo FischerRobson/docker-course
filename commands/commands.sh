@@ -39,3 +39,6 @@ docker exec -it [CONTAINER] sh
 
 # REDES
 docker network ls
+
+# LIMPAR CONTAINERS PARADOS, VOLUMES E REDES INUTILIZADOS
+docker system prune
