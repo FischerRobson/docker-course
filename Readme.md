@@ -1,10 +1,49 @@
 # Docker
+![image](.github/docker.png)
 
 ## Sobre Docker
+É uma ferramenta que se apoia em recursos existentes no kernel, inicialmente Linux, para isolar
+a execução de processos. As ferramentas que o Docker traz são basicamente uma camada de
+administração de containers, baseado originalmente no LXC.
+
+Alguns isolamentos possíveis: 
+* Limites de uso de memória
+* Limites de uso de CPU
+* Limites de uso de I/O
+* Limites de uso de rede
+* Isolamento da rede (que redes e portas são acessíveis)
+* Isolamento do file system
+* Permissões e Políticas
+* Capacidades do kernel
+
+### DOCKER *vs* VMs
+O Docker tende a utilizar menos recursos que uma VM tradicional, um dos motivos é não precisar de
+uma pilha completa como vemos em Comparação VMs × Containers. O Docker utiliza o mesmo
+kernel do host, e ainda pode compartilhar bibliotecas.
+Mesmo utilizando o mesmo kernel é possível utilizar outra distribuição com versões diferentes das
+bibliotecas e aplicativos.
+
+![image](.github/container_vs_virtual-machine.png)
+
+Todas as imagens são linux, apesar do host poder ser qualquer SO que use ou emule um kernel
+linux, as imagens em si serão baseadas em linux.
+Não é possível usar um kernel diferente do host, o Docker Engine estará executando sob
+uma determinada versão (ou emulação) do kernel linux, e não é possível executar uma versão
+diferente, pois as imagens não possuem kernel.
+
+
 
 ### IMAGEM
+Uma imagem Docker é a materialização de um modelo de um sistema de arquivos, modelo este
+produzido através de um processo chamado build.
+Esta imagem é representada por um ou mais arquivos e pode ser armazenada em um repositório
 
 ### CONTAINER
+Container é o nome dado para a segregação de processos no mesmo kernel, de forma que o processo
+seja isolado o máximo possível de todo o resto do ambiente.
+Em termos práticos são File Systems, criados a partir de uma "imagem" e que podem possuir
+também algumas características próprias.
+
 
 ## Comandos
 
