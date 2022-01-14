@@ -10,7 +10,7 @@ docker ps
 
 # CRIAR CONTAINER
 docker run [IMAGEM]
-docker run [IMAGEM] --name [NOME_CONTAINER]
+docker run --name [NOME_CONTAINER] [IMAGEM] 
 
 # INICIAR CONTAINER
 docker container start [CONTAINER] # nome:tag ou id
@@ -39,3 +39,6 @@ docker exec -it [CONTAINER] sh
 
 # REDES
 docker network ls
+
+# LIMPAR CONTAINERS PARADOS, VOLUMES E REDES INUTILIZADOS
+docker system prune
