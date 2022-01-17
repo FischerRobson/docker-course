@@ -28,6 +28,8 @@ uma pilha completa como vemos em Comparação VMs × Containers. O Docker utiliz
 kernel do host, e ainda pode compartilhar bibliotecas.
 Mesmo utilizando o mesmo kernel é possível utilizar outra distribuição com versões diferentes das
 bibliotecas e aplicativos.
+Enquanto máquinas virtuais levam minutos para iniciar, os container podem ser inicializados em segundos, consumindo
+muito menos recursos.
 
 <p align="center">
   <img src=".github/container_vs_virtual-machine.png" />
@@ -38,8 +40,6 @@ linux, as imagens em si serão baseadas em linux.
 Não é possível usar um kernel diferente do host, o Docker Engine estará executando sob
 uma determinada versão (ou emulação) do kernel linux, e não é possível executar uma versão
 diferente, pois as imagens não possuem kernel.
-
-
 
 ### IMAGEM
 Uma imagem Docker é a materialização de um modelo de um sistema de arquivos, modelo este
