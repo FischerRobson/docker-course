@@ -255,16 +255,16 @@ docker run --name nginx_alpine -d -p 8080:80 -e NGINX_ENTRYPOINT_QUIET_LOGS=1 -v
 
 #### BOAS PRÁTICAS
 
-Padrão de nomenclatura: [DOCKER_USER]/[REPOSITÓRIO]:[TAG]
-Prefira usar imagens oficiais.
-Especificar a tag de versão das imagens.
-Usar somente um processo por container.
-Fazer uso consciente das camadas, para facilitar a construção dos conteiners.
-Usar .dockerignore.
-Prefira usar COPY ao ADD.
-CMD pode é mutável, já o ENTRYPOINT (para inicialização imutável) não. É possível combina-los!
-Usar arumentos para construção de imagens.
-Multistage build (para linguagens compiladas ou JIT).
+- Padrão de nomenclatura: [DOCKER_USER]/[REPOSITÓRIO]:[TAG]
+- Prefira usar imagens oficiais.
+- Especificar a tag de versão das imagens.
+- Usar somente um processo por container.
+- Fazer uso consciente das camadas, para facilitar a construção dos conteiners.
+- Usar .dockerignore.
+- Prefira usar COPY ao ADD.
+- CMD pode é mutável, já o ENTRYPOINT (para inicialização imutável) não. É possível combina-los!
+- Usar arumentos para construção de imagens.
+- Multistage build (para linguagens compiladas ou JIT).
 
 ```
 FROM nginx:1.19.4-alpine
