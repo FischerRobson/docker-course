@@ -78,37 +78,37 @@ extremamente comum utilizar uma versão chamada latest para representar a versã
 
 #### BAIXAR IMAGEM (SEMPRE PASSAR A TAG DE VERSAO)
 
-```
+```sh
 docker pull [IMAGEM]:[TAG]
 ```
 
 #### ENVIAR A IMAGEM (SEMPRE PASSAR A TAG DE VERSAO)
 
-```
+```sh
 docker image push [IMAGEM]:[TAG]
 ```
 
 #### LISTAR IMAGENS
 
-```
+```sh
 docker image ls
 ```
 
 #### REMOVER IMAGEM
 
-```
+```sh
 docker image rm [IMAGEM] -f # nome:tag ou id
 ```
 
 #### INSPECIONAR IMAGEM
 
-```
+```sh
 docker image inspect [IMAGEM]
 ```
 
 #### ELIMINAR IMAGENS SEM REFERÊNCIA
 
-```
+```sh
 docker image prune
 ```
 
@@ -116,14 +116,14 @@ docker image prune
 
 #### LISTAR CONTAINERS ( -a EXIBE OS CONTAINERS PARADOS TAMBEM )
 
-```
+```sh
 docker container ls -a
 docker ps # antiga sintaxe
 ```
 
 #### CRIAR CONTAINER
 
-```
+```sh
 docker run [IMAGEM]
 docker run [IMAGEM] --name [NOME_CONTAINER]
 docker run [IMAGEM] -d # modo daemon (background)
@@ -132,37 +132,37 @@ docker run [IMAGEM] -it [BASH/SH] # modo interativo
 
 #### INICIAR CONTAINER
 
-```
+```sh
 docker container start [CONTAINER] # nome:tag ou id
 ```
 
 #### ENTRAR NO SHELL DO CONTAINER
 
-```
+```sh
 docker exec -it [CONTAINER] sh
 ```
 
 #### PARAR CONTAINER
 
-```
+```sh
 docker container stop [CONTAINER] # nome:tag ou id
 ```
 
 #### INSPECIONAR CONTAINER
 
-```
+```sh
 docker container inspect [CONTAINER] # nome:tag ou id
 ```
 
 #### REMOVER CONTAINER
 
-```
+```sh
 docker container rm [CONTAINER] -f # nome:tag ou id
 ```
 
 #### VERIFICAR LOGS
 
-```
+```sh
 docker container logs [CONTAINER]
 docker container logs -n 5 [CONTAINER] # apenas 5 linhas de logs
 docker container logs -t [CONTAINER] # data e hora
@@ -174,7 +174,7 @@ docker container logs -t [CONTAINER] # data e hora
 
 #### LISTAR REDES
 
-```
+```sh
 docker network ls
 ```
 
@@ -186,7 +186,7 @@ docker network ls
 > composto por dois números separados por : (dois pontos). O primeiro é no host e o segundo é no
 > container.
 
-```
+```sh
 docker run -d -p [PORTA_LOCAL]:[PORTA_CONTAINER] [IMAGEM]
 docker run -d -p 8080:80 nginx:1.19.4-alpine # executa o nginx e faz o espelhamento da porta 80 (container)
 para a 8080 (máquina)
@@ -194,13 +194,13 @@ para a 8080 (máquina)
 
 #### CRIAR CONTAINER COM REDE DO HOST
 
-```
+```sh
 docker run --net host [IMAGEM]
 ```
 
 #### INSPECIONAR REDE
 
-```
+```sh
 docker inspect network bridge
 docker inspect network host
 docker inspect network none
@@ -208,19 +208,19 @@ docker inspect network none
 
 #### CRIAR REDE
 
-```
+```sh
 docker network create --driver bridge [REDE]
 ```
 
 #### CONECTAR SUBREDES
 
-```
+```sh
 docker network connect bridge [CONTAINER] # considerando que o container esta em outra rede
 ```
 
 #### DESCONECTAR SUBREDES
 
-```
+```sh
 docker network disconnect bridge [CONTAINER]
 ```
 
@@ -236,13 +236,13 @@ docker network disconnect bridge [CONTAINER]
 > composto por dois caminhos absolutos separados por : (dois pontos). Assim como diversos outros
 > parâmetros, o primeiro é no host e o segundo é no container.
 
-```
-docker run -v "[VOLUME_LOCAL]:[VOLUMOE_CONTAINER]"
+```sh
+docker run -v "[VOLUME_LOCAL]:[VOLUME_CONTAINER]"
 ```
 
 #### MAPEANDO O _index.html_ PARA O NGINX
 
-```
+```sh
 docker run --name nginx_alpine -d -p 8080:80 -e NGINX_ENTRYPOINT_QUIET_LOGS=1 -v "/home/fischer/Dev/docker/commands:/usr/share/nginx/html" nginx:1.19.4-alpine
 ```
 
@@ -266,7 +266,7 @@ docker run --name nginx_alpine -d -p 8080:80 -e NGINX_ENTRYPOINT_QUIET_LOGS=1 -v
 - Usar arumentos para construção de imagens.
 - Multistage build (para linguagens compiladas ou JIT).
 
-```
+```yml
 FROM nginx:1.19.4-alpine
 LABEL maintainer="FischerNZ <fischerrobson@gmail.com>"
 COPY . /usr/nginx/share/html
@@ -275,19 +275,19 @@ EXPOSE 80
 
 Para buildar a imagem, execute:
 
-```
+```sh
 docker build -t [DOCKER_USER]/[NOME_IMAGEM]:[TAG] .
 ```
 
 Caso o nome do seu arquivo seja diferente de "Dockerfile", você deverá executar:
 
-```
+```sh
 docker build -f [ARQUIVO] -t [DOCKER_USER]/[NOME_IMAGEM]:[TAG] .
 ```
 
 Passando parâmetros:
 
-```
+```sh
 docker build -t [DOCKER_USER]/[NOME_IMAGEM]:[TAG] --build-arg [ARGUMENTO]="[VALOR]"
 ```
 
