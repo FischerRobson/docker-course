@@ -125,7 +125,7 @@ docker ps # antiga sintaxe
 
 ```sh
 docker run [IMAGEM]
-docker run [IMAGEM] --name [NOME_CONTAINER]
+docker run --name [NOME_CONTAINER] [IMAGEM] 
 docker run [IMAGEM] -d # modo daemon (background)
 docker run [IMAGEM] -it [BASH/SH] # modo interativo
 ```
